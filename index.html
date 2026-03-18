@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> My Portfolio</title>
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+    --primary:#ff7a18;
+    --secondary:#6a11cb;
+    --dark:#0f0f1a;
+    --light:#f4f6fa;
+    --text:#333;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background: linear-gradient(135deg,var(--dark),#1b1b2f);
+    color:white;
+    scroll-behavior:smooth;
+}
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+section{
+    padding:80px 0;
+}
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:var(--primary);
+}
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+nav ul li a:hover{
+    color:var(--primary);
+}
+.btn{
+    padding:10px 22px;
+    border-radius:30px;
+    border:none;
+    cursor:pointer;
+    font-weight:500;
+    transition:0.3s;
+    background-color: #ff7a18;
+}
+.btn-primary{
+    background:var(--primary);
+    color:white;
+}
+.btn-outline{
+    border:1px solid var(--primary);
+    background:transparent;
+    color:var(--primary);
+}
+.btn:hover{
+    transform:translateY(-3px);
+}
+/* HERO */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+
+}
+.hero-text{
+    flex:1;
+}
+.hero-text h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+.hero-text span{
+    color:var(--primary);
+}
+.hero-text p{
+    margin-bottom:20px;
+    opacity:0.8;
+}
+.hero-img{
+    flex:1;
+    text-align:center;
+}
+.hero-img img{
+    width:290px;
+    height: 260px;
+    border-radius:50%;
+     background-color: #ff7a18;
+    border:2px solid var(--primary);
+    background: linear-gradient(135 deg,var(--dark),#5a5ac4);
+}
+/* SERVICES */
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.card{
+    background:#1e1e2f;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-8px);
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+}
+.card h3{
+    margin-bottom:10px;
+}
+/* ABOUT */
+.about{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+/* PORTFOLIO */
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.portfolio-item{
+    background:#1e1e2f;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom: 20px;
+
+}
+.portfolio-item:hover{
+    transform:translateY(-8px);
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+}
+/* CONTACT */
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.contact input,
+.contact textarea{
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+}
+footer{
+    text-align:center;
+    padding:30px 0;
+    background:#111;
+    margin-top:40px;
+}
+/* ================= DESKTOP (1450px and above) ================= */
+@media (min-width: 1450px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .hero {
+    flex-wrap: nowrap;
+  }
+
+  .hero-text h1 {
+    font-size: 56px;
+  }
+
+  .services-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* ================= iPad (768px to 1449px) ================= */
+@media (max-width: 1449px) and (min-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .hero-img img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .services-grid,
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* ================= MOBILE (360px and below) ================= */
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-img img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .services-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">MB Dev</div>
+    <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#about">Education</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Mohammed Maaz</span> 👋</h1>
+        <p>Software Developer & web Developer Building Smart & scalable Applications.</p>
+       <a href="/My Portifilo/Maaz_Resume.pdf"> <button class="btn btn-outline">Download CV</button></a>
+    </div>
+</section>
+
+<p>Hello! I’m Mohammed Maaz, a passionate AI and Web Developer who enjoys building intelligent and user-friendly digital products. I specialize in creating modern web applications, integrating AI technologies, and designing clean user interfaces.
+I focus on solving real-world problems through software development and continuously improve my skills in Artificial Intelligence, Full-Stack Development, and modern web technologies.</p>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <div class="about-text">
+<h2>👨‍💻 About Me</h2>
+<p>I am an aspiring Computer Science fresher passionate about web development
+and creating user-friendly websites.My journey in technology started with learning HTML, CSS, and JavaScript, and gradually expanded into backend development using Node.js and Express. Recently, I have been focusing on AI-powered applications such as chatbots, automation tools, and prediction systems.
+I enjoy turning ideas into real working products and constantly learning new technologies to improve my skills. My goal is to work on innovative projects that combine Artificial Intelligence with practical software solutions.</p>
+</div>
+</section>
+
+<div class="Education">
+    <div class="portfolio-item">
+    <h3>Education</h3><br>
+    <p><h4>Islamiah College (Autonomous) - Bachelor  of Science in Computer Science </h4></p>
+    <h4>Thiruvalluvar University </h4>
+    <h4>CGPA : 7.1</h4>
+    <h4>June 2023 - May 2026</h4>
+    <br><br>
+    <h4>Mazharul Uloom Higher Secondary School - (MPC) Computer Science</h4>
+    <h4>Higher Secondary Certificate</h4>
+    <h4>Percentage : 71%</h4>
+    <h4>June 2022 - April 2023</h4><br>
+</div>
+
+    <div class="portfolio-item">
+    <h3>Internship</h3><br>
+    <h4>Shadowfox Python Development Intern</h4>
+    <h4>Duration : 1 Month    &nbsp &nbsp Location : Remote</h4>
+    <h4>Tools: Google Colab</h4>
+    <br><br>
+    <h4>Frontend Web Development Intern </h4>
+    <h4>Rajeev Gandhi Youth Computer Saksharta Mission </h4>
+    <h4>Duration : 1 Month   &nbsp &nbsp Location : Onsite</h4>
+    <h4>Skills : HTML, CSS, Javascript </h4>
+    <h4>Tools: Vscode </h4>
+ </div>
+  
+<!-- SKILLS -->
+<section id="services">
+    <h2>🧠 Skills</h2><br>
+    <div class="services-grid">
+            <div class="card">
+            <h3>UI Design</h3>
+            <ul>HTML5</ul>
+            <ul>CSS</ul>
+            <ul>JavaScript</ul>
+
+        </div>
+        <div class="card">
+            <h3>Frontend Development</h3>
+            <ul>Responsive Web Design</ul>
+            <ul>Flexbox & Grid Layout</ul>
+            <ul>Modern UI Development</ul>
+            <ul>DOM Manipulation</ul>
+        </div>
+    
+        <div class="card">
+            <h3>Backend Development</h3>
+            <ul>C++</ul>
+            <ul>Python</ul>
+            <ul>MySQL</ul>
+        </div>
+
+            <div class="card">
+            <h3>AI & Tools</h3>
+            <ul>AI Software Development</ul>
+            <ul>Prompt Engineering</ul>
+            <ul>AI Integration in Web Apps</ul>
+        </div>
+
+           <div class="card">
+            <h3>Development Tools</h3>
+            <ul>VS Code</ul>
+            <ul>Git & GitHub</ul>
+            <ul>Cursor AI</ul>
+        </div>
+
+        
+           <div class="card">
+            <h3>Other Skills</h3>
+            <ul>Problem Solving</ul>
+            <ul>Debugging</ul>
+            <ul>Software Development Fundamentals</ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="portfolio">
+    <h2>4️⃣ My Projects</h2><br>
+            <div class="portfolio-grid">
+            <div class="portfolio-item">
+            <h3>Smart Expense Tracker</h3><br>
+           <p>Designed a responsive GUI dashboard for income and expense tracking.</p>
+           <p>Integrated database storage for transaction history and balance calculation.</p>
+           <p>Implemented REST API backend using Flask for transaction management.</p>
+            <p>Technologies: HTML, CSS, JavaScript, Python, MySQL </p>
+            <p>Tools: VS Code, IDLE, Netlify , Render, GitHub</p><br><br>
+            view: <a href="">Live Demo</a>
+
+        </div>
+            <div class="portfolio-item">
+            <h3>AI Construction Cost Prediction System</h3><br>
+            <h4>Build Wise India Website</h4>
+            <p>Created an AI-based system that predicts construction costs based on house size and material prices. </ul>
+            <p>The system helps users estimate building costs more accurately.</p>
+            <p>Features :</p>
+            <p> Construction cost estimation</p>
+            <p>Material price integration</p>
+            <p>User input based predictions</p>
+            <p>Technologies: Python, Machine Learning concepts, HTML, CSS, JavaScript, Prompt Engineering, AI Integration  </p><br>
+             view: <a href="">Live Demo</a>
+
+        </div>
+        <div class="portfolio-item">
+            <h3>Zomato Responsive UI Clone</h3><br>
+
+            <p>Built a responsive clone of the Zomato website interface to practice modern UI design and layout techniques.</p>
+            <p>Features :</p> 
+            <p>Responsive design</p>
+            <p>Restaurant cards layout</p>
+            <p>Modern navigation UI</p>
+            <p>Technologies: HTML, CSS, JavaScript</p><br>
+            view: <a href="https://github.com/Bmaaz29/Zomato-Responsive-UI-clone">GitHub repository</a>
+</div>
+        <div class="portfolio-item">
+            <h3>My Portfolio Website</h3><br>
+            <p>Developed a professional personal portfolio website to showcase projects, skills, and certifications.</p>
+            <p>Features :</p>
+            <p> Modern UI design</p>
+            <p>Responsive layout</p>
+            <p>Projects showcase section</p>
+            <p>Contact form integration</p>
+            <p>Technologies: HTML, CSS, JavaScript</p><br><br>
+            view: <a href="">GitHub repository</a>
+
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+<h3>📜  Certificates</h3><br>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+        <h4>Smart Web Development</h4>
+            <h5>JAWA COMPUTER CENTER by Rajeev Gandhi Youth Computer Saksharta Mission </h4>
+        </div>
+        <div class="portfolio-item">
+        <h4> Certificate for the Completion of LibreOffice Suite Writer 6.3 Training</h4>
+        <h5>Spoken Tutorial, EduPyramids, SINE, IIT Bombay</h5>
+        </div>
+        <div class="portfolio-item">
+        <h4> DREAM IT'26 </h4>
+        <h4> Certificate of Participation</h4>
+        <h5>Islamiah College by State Level IT Symposium</h5>
+        </div>
+        <div class="portfolio-item">
+        <h4> Deloitte Australia - Cyber Job Simulation </h4>
+        <h4>Forage</h4>
+        <h5>Credential ID iRaYkSABEemNQ3imr</h5>
+        </div>
+        </div>
+        <p>These certifications helped strengthen my understanding of modern web technologies and software development practices.</p>
+
+</section>
+
+<h3>📊 GitHub Contributions</h3><br>
+<p>I actively use GitHub to manage and share my projects. My repositories include web development projects, AI experiments, and JavaScript practice tasks.
+My GitHub profile reflects my continuous learning journey and showcases projects that demonstrate my skills in frontend development, backend development, and AI integration.
+I regularly update my repositories with new projects and improvements as I continue learning new technologies.
+</p>
+
+<br><br>
+<div id="accouts">
+<h4>Email      -  bmohammedmaaz29@gmail.com</h4>
+<h4>Linkedin   -  Linkedin.com/in/bmohammedmaaz29</h4>
+<h4>GitHub     -  github.com/Bmaaz29</h4>
+</div>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button class="btn btn-primary">Send Message</button>
+    </form>
+</section>
+
+</div>
+
+<footer>
+    © 2026 Mohammed Maaz | Software Developer
+</footer>
+
+<script>
+// Simple smooth scroll animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+    anchor.addEventListener('click',function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior:'smooth'
+        });
+    });
+});
+/*
+fetch("https://your-backend-url/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    name,
+    email,
+    message
+  })s
+})*/
+
+</script>
+
+</body>
+</html>
